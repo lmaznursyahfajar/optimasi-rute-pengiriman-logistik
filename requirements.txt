@@ -1,0 +1,10 @@
+streamlit>=1.38
+streamlit-folium>=0.22
+folium>=0.16
+torch>=2.2
+numpy>=1.26
+pandas>=2.2
+scikit-learn>=1.4
+geopy>=2.4
+requests>=2.31
+matplotlib>=3.8
