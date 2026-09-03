@@ -1,26 +1,3 @@
-"""
-app.py
--------
-Optimasi Rute Distribusi Dinamis -- Deep Q-Network (DQN)
-
-Struktur modular:
-  modules/data_loader.py  -> upload CSV koordinat / sample Jakarta, matriks jarak OSRM
-  modules/order_data.py   -> upload CSV order log e-commerce -> agregasi -> geocoding -> points
-  modules/dqn_agent.py    -> DQN asli (PyTorch): network, replay buffer, training
-  modules/simulator.py    -> klasterisasi kendaraan, metrik, animasi
-  modules/utils.py        -> peta Folium (polyline riil, warna per kendaraan)
-  app.py (file ini)       -> UI Streamlit murni, tidak ada logika bisnis di sini
-
-Tiga sumber data pengiriman (`points`) didukung, semuanya bermuara ke skema
-DataFrame yang SAMA (id, name, lat, lon, demand, is_depot) sehingga seluruh
-pipeline routing (dqn_agent, simulator, utils) tidak perlu tahu dari mana
-titik itu berasal:
-  1. Sampel Jakarta bawaan.
-  2. CSV koordinat kustom (lat/lon langsung).
-  3. CSV log historis pesanan e-commerce (order_id, city, district, ontime,
-     dst -- TANPA koordinat) -> difilter per kota+tanggal -> diagregasi
-     jadi demand per kecamatan -> di-geocode ke lat/lon via Nominatim.
-"""
 
 from __future__ import annotations
 
