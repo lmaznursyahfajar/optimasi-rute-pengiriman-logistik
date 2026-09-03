@@ -15,7 +15,6 @@ from modules import utils
 
 st.set_page_config(page_title="Optimasi Rute Distribusi Dinamis - DQN", page_icon="🚚", layout="wide")
 
-
 # ----------------------------------------------------------------------------
 # SESSION STATE
 # ----------------------------------------------------------------------------
